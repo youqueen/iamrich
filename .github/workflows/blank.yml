@@ -14,9 +14,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - run: docker build -t ghcr.io/youqueen/inrich:1.0 .
-      - run: docker push ghcr.io/youqueen/imrich:1.0
-      - run: ssh -o "StrictHostKeyChecking no" 'youqueen-iamrich-uuvzcy8t23v#7M-5MM4SjtmEClYTvgjFWeHKc6j19Qg8@youqueen-iamrich-uuvzcy8t23v.ssh.ws-eu107.gitpod.io' 'cd /workspace/imrich/ && docker compose pull && docker compose up -d'
+      - run: docker build -t ghcr.io/youqueen/iamrich:1.0 .
+      - run: docker push ghcr.io/youqueen/iamrich:1.0
+      - run: ssh -o "StrictHostKeyChecking no" 'youqueen-iamrich-uuvzcy8t23v#7M-5MM4SjtmEClYTvgjFWeHKc6j19Qg8@youqueen-iamrich-uuvzcy8t23v.ssh.ws-eu107.gitpod.io' 'cd /workspace/iamrich/ && docker compose pull && docker compose up -d'
       - name: send default message
         if: success()
         uses: appleboy/telegram-action@master
